@@ -15,4 +15,11 @@ public class UTests {
         Image image = player.getImage();
         assertEquals(image, player.getImage());
     }
+
+    @Test
+    void getPlayerMoveOnReset() {
+        Player player = new Player();
+        player.reset();
+        assertEquals(0, player.getDx());
+    }
 }
