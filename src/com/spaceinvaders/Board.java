@@ -35,6 +35,7 @@ public class Board extends JPanel implements Constants, KeyListener, ActionListe
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        drawGameScore(g);
         drawProjectiles(g);
         drawAliens(g);
         player.drawObject(g, this);
@@ -237,6 +238,15 @@ public class Board extends JPanel implements Constants, KeyListener, ActionListe
         g.setColor(Color.white);
         g.setFont(small);
         g.drawString(message, (WINDOW_WIDTH - fm.stringWidth(message)) / 2, (WINDOW_HEIGHT / 2 - 26));
+    }
+
+    public void drawGameScore(Graphics g) {
+        Font small = new Font("Halvetica", Font.BOLD, 20);
+        FontMetrics fm = this.getFontMetrics(small);
+        g.setColor(Color.white);
+        g.setFont(small);
+        String message = "Aliens defeated: " + deaths + " / 24";
+        g.drawString(message,  5, 25);
     }
 
     public void reset() {
