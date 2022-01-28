@@ -13,6 +13,6 @@ public interface Constants {
     int BORDER_RIGHT = 30;
     int GO_DOWN = 30;
     int SHOT_SPEED = 8;
-    int ALIEN_SPEED = 3;
+    int ALIEN_SPEED = 4;
     int PLAYER_SPEED = 6;
 }
