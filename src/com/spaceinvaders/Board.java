@@ -220,7 +220,7 @@ public class Board extends JPanel implements Constants, KeyListener, ActionListe
     public void initAliens() {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 6; j++) {
-                Alien alien = new Alien(+ 150 + (ALIEN_WIDTH + 10) * j, 5 + (ALIEN_HEIGHT + 10) * i, "Sprites/alien" + i + ".png");
+                Alien alien = new Alien(150 + (ALIEN_WIDTH + 10) * j, 5 + (ALIEN_HEIGHT + 10) * i, "Sprites/alien" + i + ".png");
                 aliens.add(alien);
             }
         }
@@ -245,5 +245,13 @@ public class Board extends JPanel implements Constants, KeyListener, ActionListe
         initAliens();
         deaths = 0;
         ingame = true;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public boolean isIngame() {
+        return ingame;
     }
 }
