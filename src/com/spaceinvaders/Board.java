@@ -66,7 +66,7 @@ public class Board extends JPanel implements Constants, KeyListener, ActionListe
 
         for (Alien alien : aliens) {
             if (alien.isVisible() && alien.getY() >= GROUND) {
-                message = "Game Over";
+                message = "Invasion";
                 ingame = false;
             }
 
@@ -112,14 +112,14 @@ public class Board extends JPanel implements Constants, KeyListener, ActionListe
         for (Alien alien : aliens) {
             int x = alien.getX();
 
-            if (x >= WINDOW_WIDTH - BORDER_RIGHT && direction != -ALIEN_SPEED) {
+            if (x >= WINDOW_WIDTH - BORDER_RIGHT && direction != -ALIEN_SPEED && alien.isVisible()) {
                 direction = -ALIEN_SPEED;
                 for (Alien a : aliens) {
                     a.setY(a.getY() + GO_DOWN);
                 }
             }
 
-            if (x <= BORDER_LEFT && direction != ALIEN_SPEED) {
+            if (x <= BORDER_LEFT && direction != ALIEN_SPEED && alien.isVisible()) {
                 direction = ALIEN_SPEED;
                 for (Alien a : aliens) {
                     a.setY(a.getY() + GO_DOWN);
