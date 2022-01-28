@@ -22,4 +22,11 @@ public class UTests {
         player.reset();
         assertEquals(0, player.getDx());
     }
+
+    @Test
+    void checkBoard() {
+        Board board = new Board();
+        assertEquals(0, board.getTime());
+        assertTrue(board.isIngame());
+    }
 }
